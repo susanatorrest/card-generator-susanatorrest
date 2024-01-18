@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Excuse Generator</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        text-align: center;
+        margin: 50px;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      #excuse {
+        margin-top: 20px;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Excuse Generator</h1>
+    <button onclick="generateExcuse()">Generate Excuse</button>
+    <p id="excuse"></p>
+
+    <script>
+      const excuses = [
+        "My dog ate my homework.",
+        "'My grandma broke the car while I was praying.",
+        " His turtle crushed the keys before class.",
+        "My bird ate my homework when I finished.",
+        "My brother peed the car during my lunch.",
+        "The dog ate the keys while I was praying."
+      ];
+
+      function generateExcuse() {
+        const excuseElement = document.getElementById("excuse");
+        const randomIndex = Math.floor(Math.random() * excuses.length);
+        const randomExcuse = excuses[randomIndex];
+        excuseElement.textContent = randomExcuse;
+      }
+    </script>
+  </body>
+</html>

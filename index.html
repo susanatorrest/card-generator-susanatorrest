@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excuse Generator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #excuse {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Excuse Generator</h1>
+    <button onclick="generateExcuse()">Generate Excuse</button>
+    <p id="excuse"></p>
+
+    <script>
+        const excuses = [
+            "I forgot about the meeting.",
+            "I had a family emergency.",
+            "My alarm didn't go off.",
+            "I'm not feeling well.",
+            "I got stuck in traffic.",
+            "I had a last-minute work assignment.",
+            "I have a doctor's appointment.",
+            "My pet needed immediate attention.",
+            "I lost track of time.",
+            "I have a personal commitment.",
+        ];
+
+        function generateExcuse() {
+            const excuseElement = document.getElementById("excuse");
+            const randomIndex = Math.floor(Math.random() * excuses.length);
+            const randomExcuse = excuses[randomIndex];
+            excuseElement.textContent = randomExcuse;
+        }
+    </script>
+</body>
+</html>
