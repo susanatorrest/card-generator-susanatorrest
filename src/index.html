@@ -1,47 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Excuse Generator</title>
-    <style>
-      body {
-        font-family: "Arial", sans-serif;
-        text-align: center;
-        margin: 50px;
-      }
-      button {
-        padding: 10px 20px;
-        font-size: 16px;
-        cursor: pointer;
-      }
-      #excuse {
-        margin-top: 20px;
-        font-size: 18px;
-      }
-    </style>
+    <title>Random Card Generator</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+      crossorigin="anonymous"
+    />
+    <link rel="shortcut icon" href="./4geeks.ico" />
+    <link src="app.js" />
   </head>
+
   <body>
-    <h1>Excuse Generator</h1>
-    <button onclick="generateExcuse()">Generate Excuse</button>
-    <p id="excuse"></p>
+    <div class="fondo">
+      <div class="container-fluid text-center">
+        <div
+          id="row"
+          class="row mb-3 d-flex justify-content-center align-items-center"
+        >
+          <div
+            id="card"
+            class="col-xl-2 col-lg-2 col-md-3 col-sm-3 col-4 mx-auto  bg-light rounded"
+          >
+            <div class="d-flex justify-content-start display-3">
+              <span id="up"></span>
+            </div>
+            <div
+              class="d-flex justify-content-center align-items-center my-5 display-1 "
+            >
+              <p id="number" class="text-monospace"></p>
+            </div>
+            <div class="d-flex justify-content-end display-3">
+              <span id="bottom" style="transform: rotate(180deg)"></span>
+            </div>
+          </div>
+        </div>
+        <div class="row d-flex justify-content-center align-items-center">
+          <div class="col-lg-3 col-md-4 col-sm-5 col-8">
+            <div class="d-flex justify-content-center align-items-center">
+              <button id="button" class="btn btn-change-card mx-auto mt-3">
+                CHANGE CARD
+              </button>
+            </div>
+            <div class="d-flex justify-content-center align-items-center mt-0">
+              <div id="time" class="btn btn-timer mx-auto"></div>
+            </div>
+            <div
+              class="d-flex justify-content-start align-items-center bg-white mt-2 mb-0"
+            >
+              <span id="currentTime"></span>
+            </div>
+            <div class="width input-group mt-0">
+              <span class="input-group-text" for="widthInput">WIDTH</span>
+              <input
+                type="number"
+                class="form-control"
+                id="widthInput"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default"
+              />
+            </div>
+            <div class="height input-group mt-2">
+              <span class="input-group-text" for="heightInput">HEIGHT</span>
+              <input
+                type="number"
+                class="form-control"
+                id="heightInput"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <script>
-      const excuses = [
-        "My dog ate my homework.",
-        "'My grandma broke the car while I was praying.",
-        " His turtle crushed the keys before class.",
-        "My bird ate my homework when I finished.",
-        "My brother peed the car during my lunch.",
-        "The dog ate the keys while I was praying."
-      ];
-
-      function generateExcuse() {
-        const excuseElement = document.getElementById("excuse");
-        const randomIndex = Math.floor(Math.random() * excuses.length);
-        const randomExcuse = excuses[randomIndex];
-        excuseElement.textContent = randomExcuse;
-      }
-    </script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
